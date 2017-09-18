@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "ember build -e production",
-    "start": "ember server",
+    "build-ext": "web-ext build -s extension",
+    "start": "ember build --watch | web-ext run -s extension -u https://www.britishcycling.org.uk/events?search_type=upcoming",
     "test": "ember test"
   },
   "devDependencies": {
@@ -26,7 +27,8 @@
     "ember-cli-sass": "^6.2.0",
     "ember-cli-uglify": "^2.0.0-beta.1",
     "qunitjs": "^2.3.3",
-    "typescript": "^2.2.2"
+    "typescript": "^2.2.2",
+    "web-ext": "^2.0.0"
   },
   "engines": {
     "node": ">= 4.0"

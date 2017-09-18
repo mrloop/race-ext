@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "race details",
+  "version": "0.1",
+
+  "description": "Retrieves entrants ordered by regional and national rankings",
+
+  "content_scripts": [
+    {
+      "matches": ["*://www.britishcycling.org.uk/events*"],
+      "js": ["dist/app.js"]
+    }
+  ]
+
+}
