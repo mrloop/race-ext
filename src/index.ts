@@ -14,8 +14,9 @@ const initDesktop = function() {
       if(link) {
         let id = link.getAttribute('data-event-id');
         let containerElement = document.createElement('div');
+        containerElement.setAttribute('event-id', id);
         td.appendChild(containerElement);
-        initApp(containerElement);
+        app.renderComponent('race-ext', containerElement, null);
       }
     }
   });
@@ -29,8 +30,9 @@ const initMobile = function() {
         let id = link.getAttribute('data-event-id');
         let buttons = row.getElementsByClassName('events--mobile__link__buttons')[0];
         let containerElement = document.createElement('div');
+        containerElement.setAttribute('event-id', id);
         buttons.appendChild(document.createElement('div').appendChild(containerElement));
-        initApp(containerElement);
+        app.renderComponent('race-ext', containerElement, null);
       }
     }
   });
@@ -43,7 +45,7 @@ const addHeader = function(row) {
   row.appendChild(heading);
 }
 
-const initApp = function(containerElement) {
+const initApp = function() {
   let app = new App();
 
   setPropertyDidChange(() => {
@@ -55,13 +57,11 @@ const initApp = function(containerElement) {
       registry.register(`component-manager:/${app.rootName}/component-managers/main`, ComponentManager);
     }
   });
+  return app;
+};
 
-  app.renderComponent('race-ext', containerElement, null);
-
-  app.boot();
-}
-
+const app = initApp();
 initDesktop();
 initMobile();
-
-
+app.boot();
+app.scheduleRerender();
