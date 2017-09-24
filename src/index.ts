@@ -15,6 +15,7 @@ const initDesktop = function() {
         let id = link.getAttribute('data-event-id');
         let containerElement = document.createElement('div');
         containerElement.setAttribute('event-id', id);
+        td.setAttribute('class', 'events--event__column');
         td.appendChild(containerElement);
         app.renderComponent('race-ext', containerElement, null);
       }
