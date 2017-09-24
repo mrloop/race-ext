@@ -20,6 +20,10 @@ export default class RaceExt extends Component {
   didInsertElement() {
     this.eventId = this.element.parentElement.getAttribute('event-id');
     this.event = new Event(this.eventId);
-    this.event.init().then( evt => console.log(evt.name));
+    this.event.init();
+  }
+
+  viewEntrants() {
+    window.postMessage({ event: this.event }, window.location.origin);
   }
 }

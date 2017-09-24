@@ -39,6 +39,13 @@ const initMobile = function() {
   });
 };
 
+const initModal = function() {
+  let modalElem = document.createElement('div');
+  modalElem.setAttribute('class', 'race-ext-modal');
+  document.body.appendChild(modalElem);
+  app.renderComponent('entrants-modal', modalElem, null);
+}
+
 const addHeader = function(row) {
   const heading = document.createElement('th');
   const text = document.createTextNode('race lib');
@@ -64,5 +71,6 @@ const initApp = function() {
 const app = initApp();
 initDesktop();
 initMobile();
+initModal();
 app.boot();
 app.scheduleRerender();

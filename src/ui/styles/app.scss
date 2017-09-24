@@ -2,3 +2,10 @@
   cursor: pointer;
   user-select: none;
 }
+
+.race-ext-modal--show {
+  border: 10px dotted purple;
+}
+.race-ext-modal--hide {
+  border: 10px dotted green;
+}
