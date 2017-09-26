@@ -15,15 +15,12 @@ Event.inject('cheerio', $);
 export default class RaceExt extends Component {
 
   @tracked eventId = '';
-  event = null;
 
   didInsertElement() {
     this.eventId = this.element.parentElement.getAttribute('event-id');
-    this.event = new Event(this.eventId);
-    this.event.init();
-  }
+ }
 
   viewEntrants() {
-    window.postMessage({ event: this.event }, window.location.origin);
+    window.postMessage({ eventId: this.eventId }, window.location.origin);
   }
 }
