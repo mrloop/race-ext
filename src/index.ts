@@ -15,7 +15,7 @@ const initDesktop = function() {
         let id = link.getAttribute('data-event-id');
         let containerElement = document.createElement('div');
         containerElement.setAttribute('event-id', id);
-        td.setAttribute('class', 'events--event__column');
+        td.setAttribute('class', 'events--event__column race-ext__desktop');
         td.appendChild(containerElement);
         app.renderComponent('race-ext', containerElement, null);
       }
@@ -32,10 +32,17 @@ const initMobile = function() {
         let buttons = row.getElementsByClassName('events--mobile__link__buttons')[0];
         let containerElement = document.createElement('div');
         containerElement.setAttribute('event-id', id);
-        buttons.appendChild(document.createElement('div').appendChild(containerElement));
+        containerElement.setAttribute('class', 'race-ext__mobile');
+        buttons.appendChild(containerElement);
         app.renderComponent('race-ext', containerElement, null);
       }
     }
+  });
+};
+
+const tidyUp = function() {
+  ['race-ext__mobile', 'race-ext__desktop', 'race-ext-modal'].forEach( className => {
+    Array.from(document.getElementsByClassName(className)).forEach( elem => elem.remove());
   });
 };
 
@@ -49,6 +56,7 @@ const initModal = function() {
 const addHeader = function(row) {
   const heading = document.createElement('th');
   const text = document.createTextNode('race lib');
+  heading.setAttribute('class', 'race-ext__desktop');
   heading.appendChild(text);
   row.appendChild(heading);
 }
@@ -69,6 +77,7 @@ const initApp = function() {
 };
 
 const app = initApp();
+tidyUp();
 initDesktop();
 initMobile();
 initModal();
