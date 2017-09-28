@@ -1,0 +1,15 @@
+<h2>{{@race.name}}</h2>
+
+{{#if isLoading}}
+  Loading...
+{{else}}
+
+<ul>
+  {{#each users key="@index" as |entrant|}}
+    <li>{{entrant.name}}</li>
+  {{else}}
+    No Entrants
+  {{/each}}
+</ul>
+
+{{/if}}

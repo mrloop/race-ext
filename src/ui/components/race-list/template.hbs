@@ -1,0 +1,10 @@
+{{#if hasSelected}}
+  <race-detail @race={{selectedRace}} />
+{{/if}}
+
+  <ul>
+    {{#each @races key="@index" as |race|}}
+      <a class="race-ext-race-list-link" onclick={{action select race}}><li>{{race.name}}</li></a>
+    {{/each}}
+  </ul>
+

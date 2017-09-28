@@ -1,8 +1,5 @@
 <div class="race-ext-modal__content {{className}}">
-  <ul>
-    {{#each event.races key="@index" as |race|}}
-      <li>{{race.name}}</li>
-    {{/each}}
-  </ul>
+  <race-list @races={{event.races}} />
 </div>
+
 <div class="race-ext-modal__overlay {{className}}" onclick={{action close}}></div>

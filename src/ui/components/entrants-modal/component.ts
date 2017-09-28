@@ -5,16 +5,20 @@ export default class EntrantsModal extends Component {
 
   @tracked className:string = "race-ext-modal--hide";
   @tracked event = null;
+  events = {};
   receivedMessageBind = null;
 
   receivedMessage(msg) {
     if(msg.data.eventId && msg.origin === window.location.origin) {
-      if(!this.event || this.event.id !== msg.data.eventId) {
+      const cachedEvent = this.events[msg.data.eventId];
+      if(!cachedEvent || cachedEvent.id !== msg.data.eventId) {
         new Event(msg.data.eventId).init().then((evt) => {
           this.event = evt;
+          this.events[msg.data.eventId] = evt;
           this.className = "race-ext-modal--show";
         });
-      } else if(this.event) {
+      } else if(cachedEvent) {
+        this.event = cachedEvent;
         this.className = "race-ext-modal--show";
       }
     }
@@ -30,6 +34,7 @@ export default class EntrantsModal extends Component {
   }
 
   close() {
+    this.event = null;
     this.className = "race-ext-modal--hide";
   }
 };
