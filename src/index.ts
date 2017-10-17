@@ -55,7 +55,7 @@ const initModal = function() {
 
 const addHeader = function(row) {
   const heading = document.createElement('th');
-  const text = document.createTextNode('race lib');
+  const text = document.createTextNode('race ext');
   heading.setAttribute('class', 'race-ext__desktop');
   heading.appendChild(text);
   row.appendChild(heading);

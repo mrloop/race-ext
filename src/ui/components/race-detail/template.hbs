@@ -1,15 +1,39 @@
-<h2>{{@race.name}}</h2>
+<h2>{{race.name}}</h2>
 
-{{#if isLoading}}
-  Loading...
-{{else}}
+{{status}}
 
-<ul>
-  {{#each users key="@index" as |entrant|}}
-    <li>{{entrant.name}}</li>
-  {{else}}
-    No Entrants
-  {{/each}}
-</ul>
+<span class="race-ext-race-detail-users">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Club</th>
+      <th>Regional Rank</th>
+      <th>National Rank</th>
+    </tr>
+    {{#each users key="@index" as |entrant|}}
+      <tr>
+        <td><a href="{{entrant.points_href}}" target="_blank">{{entrant.name}}</a></td>
 
-{{/if}}
+        {{#if entrant.error}}
+          <td colspan="3"><a href="{{entrant.points_href}}" target="_blank">error</a></td>
+        {{else}}
+
+          {{#if entrant.points_loaded}}
+
+            <td><a href="{{entrant.points_href}}" target="_blank">{{entrant.current_club}}</a></td>
+            <td><a href="{{entrant.points_href}}" target="_blank">{{entrant.regional_rank}}</a></td>
+            <td><a href="{{entrant.points_href}}" target="_blank">{{entrant.national_rank}}</a></td>
+
+          {{else}}
+            <td colspan="3"><a href="{{entrant.points_href}}" target="_blank">loading...</a></td>
+          {{/if}}
+        {{/if}}
+
+      </tr>
+    {{else}}
+      <tr>
+        <td colspan=4>No Entrants</td>
+      </tr>
+    {{/each}}
+  </table>
+</span>

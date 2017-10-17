@@ -18,7 +18,7 @@ export default class RaceExt extends Component {
 
   didInsertElement() {
     this.eventId = this.element.parentElement.getAttribute('event-id');
- }
+  }
 
   viewEntrants() {
     window.postMessage({ eventId: this.eventId }, window.location.origin);

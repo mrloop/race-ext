@@ -11,6 +11,8 @@
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 1em;
+  max-height: 70vh;
+  min-width: 60vw;
 }
 
 .race-ext-modal__overlay {
@@ -26,11 +28,34 @@
 
 .race-ext-modal--show {
   display: flex;
+  flex-direction: column;
 }
 .race-ext-modal--hide {
   display: none;
 }
 
+.race-ext-race-list {
+  overflow-y: hidden;
+  margin: 0;
+}
+
 .race-ext-race-list-link {
   cursor: pointer;
+}
+
+.race-ext-race-detail {
+  //display: block;
+}
+
+.race-ext-race-detail-users {
+  display: inline;
+  overflow-y: scroll;
+  table td {
+    padding: 0;
+    & a{
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+    }
+  }
 }
