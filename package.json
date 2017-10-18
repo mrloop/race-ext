@@ -1,7 +1,7 @@
 {
   "name": "race-ext",
   "version": "0.0.0",
-  "description": "A brand new Glimmer app.",
+  "description": "Web Extension: retrieves britishcycling.org.uk/events entrants ordered by regional and national rankings",
   "directories": {
     "doc": "doc",
     "test": "tests"
