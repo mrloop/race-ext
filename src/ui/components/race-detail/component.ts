@@ -3,35 +3,38 @@ import Component, { tracked } from '@glimmer/component';
 export default class RaceDetail extends Component {
 
   @tracked status = "Loading ...";
-  @tracked race = null;
-  @tracked _users = [];
+  @tracked users = [];
 
-  //@race set
-  @tracked('args', '_users')
-  get users() {
-    this.initListeners();
-    this._users = this.race._users;
-    return this._users;
+  willDestroy() {
+    this.teardownListeners(this.args.race);
+
+  }
+
+  set args(args) {
+    //race is changing
+    if(!super.args || super.args.race !== args.race ) {
+      if(this.args) {
+        this.teardownListeners(this.args.race);
+      }
+      super.args = args;
+      this.setupListeners(this.args.race);
+    }
+  }
+
+  //https://stackoverflow.com/questions/34456194/is-it-possible-to-call-a-super-setter-in-es6-inherited-classes
+  get args() {
+    return super.args;
   }
 
   entrantLoaded(data) {
-    this._users = data.detail.users;
+    this.users = data.detail.users;
     this.status = `Loading ${data.detail.loaded}/${data.detail.total}`
   }
 
   entrantError(data) {
     if(data.detail.error.name !== "AbortError") {
       console.error(data.detail.error);
-      this.status = `Error Loading: ${data.detail.error}`;
-    }
-  }
-
-  initListeners() {
-    if(this.race !== this.args.race) {
-      this.teardownListeners(this.race);
-      this.race = this.args.race;
-      this.setupListeners(this.race);
-    }
+      this.status = `Error Loading: ${data.detail.error}`; }
   }
 
   setupListeners(race) {

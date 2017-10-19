@@ -13,7 +13,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone git@github.com:mrloop/race-ext.git` this repository
 * `cd race-ext`
 * `yarn`
 
