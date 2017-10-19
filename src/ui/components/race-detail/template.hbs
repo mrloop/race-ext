@@ -1,6 +1,7 @@
-<h2>{{@race.name}}</h2>
-
-{{status}}
+<div class="race-ext-modal__content-body">
+  <h3>{{@race.name}}</h3>
+  <span>{{status}}</span>
+</div>
 
 <span class="race-ext-race-detail-users">
   <table>
@@ -21,8 +22,8 @@
           {{#if entrant.points_loaded}}
 
             <td><a href="{{entrant.points_href}}" target="_blank">{{entrant.current_club}}</a></td>
-            <td><a href="{{entrant.points_href}}" target="_blank">{{entrant.regional_rank}}</a></td>
-            <td><a href="{{entrant.points_href}}" target="_blank">{{entrant.national_rank}}</a></td>
+            <td><a href="{{entrant.points_href}}" target="_blank">{{if (eq 999 entrant.regional_rank) '' entrant.regional_rank}}</a></td>
+            <td><a href="{{entrant.points_href}}" target="_blank">{{if (eq 999 entrant.national_rank) '' entrant.national_rank}}</a></td>
 
           {{else}}
             <td colspan="3"><a href="{{entrant.points_href}}" target="_blank">loading...</a></td>
@@ -32,7 +33,7 @@
       </tr>
     {{else}}
       <tr>
-        <td colspan=4>No Entrants</td>
+        <td colspan=4><span>No Entrants</span></td>
       </tr>
     {{/each}}
   </table>

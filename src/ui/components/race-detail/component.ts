@@ -7,7 +7,6 @@ export default class RaceDetail extends Component {
 
   willDestroy() {
     this.teardownListeners(this.args.race);
-
   }
 
   set args(args) {

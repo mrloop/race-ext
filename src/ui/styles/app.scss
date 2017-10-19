@@ -10,9 +10,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 1em;
   max-height: 70vh;
   min-width: 60vw;
+}
+
+.race-ext-modal__content-title {
+  border-radius: 8px 8px 0 0;
+  color: white;
+  background: red;
+  padding: 0.5em;
+  margin: 0;
+}
+
+.race-ext-modal__content-body {
+  padding: 0.5em;
+  margin: 0;
 }
 
 .race-ext-modal__overlay {
@@ -29,6 +41,7 @@
 .race-ext-modal--show {
   display: flex;
   flex-direction: column;
+  border-radius: 8px 8px 0 0;
 }
 .race-ext-modal--hide {
   display: none;
@@ -49,10 +62,10 @@
 
 .race-ext-race-detail-users {
   display: inline;
-  overflow-y: scroll;
+  overflow-y: auto;
   table td {
     padding: 0;
-    & a{
+    & a, span{
       display: block;
       padding: 10px;
       text-decoration: none;

@@ -1,5 +1,6 @@
 <div class="race-ext-modal__content {{className}}">
-  <race-list @races={{selectedEvent.races}} />
+  <h3 class="race-ext-modal__content-title">{{selectedEvent.name}}</h3>
+  <race-list class="race-ext-modal__content-body" @races={{selectedEvent.races}} />
 </div>
 
 <div class="race-ext-modal__overlay {{className}}" onclick={{action close}}></div>

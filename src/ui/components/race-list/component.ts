@@ -6,10 +6,11 @@ export default class RaceList extends Component {
 
   set args(args) {
     if(!super.args || super.args.races !== args.races) {
-      console.log(super.args)
-      console.log(args);
       if(!args.races) {
         this.selectedRace = null;
+      } else if(args.races.length === 1) {
+        this.selectedRace = args.races[0];
+        this.load(this.selectedRace);
       }
       super.args = args;
     }
@@ -19,13 +20,17 @@ export default class RaceList extends Component {
     return super.args;
   }
 
-  select(race) {
-    race.isLoading = true;
+  load(race) {
     race.entrants().then( ents => {
       race.isLoading = false;
     }).catch( err => {
       race.isLoading = false;
     });
+  }
+
+  select(race) {
+    race.isLoading = true;
     this.selectedRace = race;
+    this.load(race);
   }
 };

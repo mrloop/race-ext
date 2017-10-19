@@ -1,4 +1,4 @@
-<ul class="race-ext-race-list">
+<ul class="race-ext-race-list race-ext-modal__content-body">
   {{#each @races key="@index" as |race|}}
     <li>
     <a class="race-ext-race-list-link" onclick={{action select race}}>{{race.name}}</a></li>
@@ -8,5 +8,3 @@
 {{#if selectedRace}}
   <race-detail @race={{selectedRace}} />
 {{/if}}
-
-
