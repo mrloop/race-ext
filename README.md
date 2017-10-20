@@ -4,6 +4,8 @@
 
 Web Extension to retrieve britishcycling.org.uk/events entrants ordered by regional and national rankings
 
+![web extension screenshot](race-ext.png)
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
