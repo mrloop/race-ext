@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Know the Competition",
-  "version": "0.1",
+  "version": "0.2",
 
   "description": "Retrieves britishcycling.org.uk/events entrants ordered by regional and national rankings",
   "homepage_url": "https://github.com/mrloop/race-ext",
