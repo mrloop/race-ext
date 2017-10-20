@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mrloop/race-ext.svg)](https://travis-ci.org/mrloop/race-ext)
+
 # ⚙ race-ext
 
 Web Extension to retrieve britishcycling.org.uk/events entrants ordered by regional and national rankings
