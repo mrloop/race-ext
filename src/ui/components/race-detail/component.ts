@@ -17,6 +17,7 @@ export default class RaceDetail extends Component {
       }
       super.args = args;
       this.setupListeners(this.args.race);
+      this.users = args.race._users;
     }
   }
 
