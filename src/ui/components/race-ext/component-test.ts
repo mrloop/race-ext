@@ -1,9 +1,11 @@
 import { setupRenderingTest } from '@glimmer/test-helpers';
 import hbs from '@glimmer/inline-precompile';
+import { Event } from 'race-lib';
+import { injectFixtures } from 'race-fix';
+
+injectFixtures(Event);
 
 const { module, test } = QUnit;
-
-const process = { env: { test: true } };
 
 const didRender = function (app: any): Promise<void> {
   return new Promise<void>(resolve => {
@@ -22,6 +24,7 @@ module('Component: race-ext', function(hooks) {
     await this.render(hbs`<div event-id="123"><race-ext /></div>`);
     this.app.scheduleRerender();
     await didRender(this.app);
-    assert.equal(this.containerElement.textContent.trim(), 'EventId: 123');
+    assert.equal(this.containerElement.textContent.trim(), 'Entrants');
+    assert.equal(this.containerElement.querySelector('a').getAttribute('data-test-event-id'), '123');
   });
 });

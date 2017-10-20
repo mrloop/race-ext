@@ -37,7 +37,7 @@ export default class RaceDetail extends Component {
   }
 
   setupListeners(race) {
-    if(race) {
+    if(race && race.addEventListener) { //race not an object during testing
       this.entrantLoaded = this.entrantLoaded.bind(this);
       this.entrantError = this.entrantError.bind(this);
       race.addEventListener('entrantLoaded', this.entrantLoaded);

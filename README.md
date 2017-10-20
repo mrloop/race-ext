@@ -1,4 +1,4 @@
-# race-ext
+# ⚙ race-ext
 
 Web Extension to retrieve britishcycling.org.uk/events entrants ordered by regional and national rankings
 
@@ -24,6 +24,10 @@ You will need the following things properly installed on your computer.
 ### Building
 
 * `yarn build`
+
+### Testing
+
+* `yarn test`
 
 ### Deploy
 
