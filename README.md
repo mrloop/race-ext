@@ -4,6 +4,8 @@
 
 Web Extension to retrieve britishcycling.org.uk/events entrants ordered by regional and national rankings
 
+[Firefox addon](https://addons.mozilla.org/en-US/firefox/addon/know-the-competition/)
+
 ![web extension screenshot](race-ext.png)
 
 ## Prerequisites
