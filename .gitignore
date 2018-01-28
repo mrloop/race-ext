@@ -2,3 +2,5 @@ node_modules
 tmp/*
 dist
 web-ext-artifacts
+web-ext-artifacts-chrome
+extension-chrome/icon-*.png

@@ -9,7 +9,8 @@
   "scripts": {
     "build": "ember build -e production",
     "build-ext": "web-ext build -s extension",
-    "start": "ember build --watch | web-ext run -s extension -u https://www.britishcycling.org.uk/events?search_type=upcoming",
+    "start:firefox": "./start-firefox.sh",
+    "start:chrome": "./start-chrome.sh",
     "test": "ember test"
   },
   "devDependencies": {

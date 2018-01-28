@@ -9,7 +9,7 @@ $.load = function(htmlString: string) {
   }
 }
 
-Event.inject('fetch', window.fetch);
+Event.inject('fetch', window.fetch.bind());
 Event.inject('cheerio', $);
 
 export default class RaceExt extends Component {
