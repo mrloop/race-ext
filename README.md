@@ -6,6 +6,8 @@ Web Extension to retrieve britishcycling.org.uk/events entrants ordered by regio
 
 [Firefox addon](https://addons.mozilla.org/en-US/firefox/addon/know-the-competition/)
 
+[Chrome addon](https://chrome.google.com/webstore/detail/know-the-competition/odlnobeiombjhcehmhonbiijfeodcoae)
+
 ![web extension screenshot](race-ext.png)
 
 ## Prerequisites
