@@ -40,6 +40,6 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.2.1",
-    "race-lib": "^0.0.7"
+    "race-lib": "^0.0.8"
   }
 }
