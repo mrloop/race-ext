@@ -1,6 +1,6 @@
 {
   "name": "race-ext",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Web Extension: retrieves britishcycling.org.uk/events entrants ordered by regional and national rankings",
   "directories": {
     "doc": "doc",

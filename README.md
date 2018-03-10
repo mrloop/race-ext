@@ -40,6 +40,20 @@ You will need the following things properly installed on your computer.
 
 ### Deploy
 
+Build for firefox ext
+
+```
+yarn build-ext
+```
+
+Build for chrome ext
+
+```
+ember build -o extension-chrome/dist
+web-ext build -s extension-chrome -a web-ext-artifacts-chrome
+
+```
+
 * [Firefox](https://addons.mozilla.org/en-GB/developers/addon/submit/upload-listed)
 * [Chrome](https://chrome.google.com/webstore/developer/update?authuser=1)
 * [Edge](http://docs.microsoft.com/en-us/microsoft-edge/extensions/getting-started#publishing-to-the-windows-store)
