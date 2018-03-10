@@ -27,7 +27,8 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* `yarn start`
+* `yarn start:firefox`
+* `yarn start:chrome`
 
 ### Building
 
